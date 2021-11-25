@@ -11,7 +11,7 @@ const Preload = () => {
                 //Faço um get nas 3 tabelas e vejo se existe um deles que tem esse id. Se não tiver, é falso
                 history.push({
                     pathname:"/dashboard",
-                    state: {role:"student"}
+                    state: {role:"teacher"}
                 })
             }
             else{

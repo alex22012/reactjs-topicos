@@ -1,11 +1,15 @@
 import React, {useState} from "react"
+import DashBoardTeacherBarComponent from "./shared/DashBoardTeacherBarComponent"
+import { DashBoardContainer, DashBoardPage } from "./shared/styled"
 
 const TeacherComponent = () => {
     return (
-        <ul>
-            <li>Nova atividade</li>
-            <li>Lançamento de notas</li>
-        </ul>
+        <DashBoardContainer>
+            <DashBoardTeacherBarComponent />
+            <DashBoardPage>
+                Bem vindo professor
+            </DashBoardPage>
+        </DashBoardContainer>
     )
 }
 

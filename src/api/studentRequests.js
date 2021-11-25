@@ -10,3 +10,7 @@ export const getAllStudents = async () => {
     })
     return resp.json()
 }
+
+export const getStudentSchedule = async () => {
+    return
+}
