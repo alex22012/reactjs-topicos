@@ -1,3 +1,4 @@
+import md5 from "md5"
 import React, {useState, useEffect} from "react"
 import { useLocation } from "react-router"
 import AdminComponent from "../components/AdminComponent"
@@ -5,25 +6,30 @@ import StudentComponent from "../components/StudentComponent"
 import TeacherComponent from "../components/TeacherComponent"
 
 const HomeScreen = (props) => {
-    const [isStudent, setIsStudent] = useState(false)
+    const [role, setRole] = useState(false)
     const location = useLocation()
     useEffect(() => {
         function fetchData() {
-            if(location.state === undefined)
-                setIsStudent(true)
+            let role = localStorage.getItem(md5("role"))
+            if(role === md5("admin"))
+                setRole("admin")
+            else if (role === md5("teacher"))
+                setRole("teacher")
+            else 
+                setRole("student")
         }
         fetchData()
     }, [])
     //Aqui eu verifico se o cara é adm, professor ou aluno e renderizo o componente certo
     return (
         <div>  
-            {location.state.role === "admin" &&
+            {role === "admin" &&
                 <AdminComponent />
             }
-            {location.state.role === "teacher" && 
+            {role === "teacher" && 
                 <TeacherComponent />
             }
-            {location.state.role === "student" && 
+            {role === "student" && 
                 <StudentComponent />
             }
         </div>

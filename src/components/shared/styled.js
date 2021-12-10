@@ -8,25 +8,30 @@ export const Page = styled.div`
 `
 
 export const TextInput = styled.input`
-    width:200px;
+    width:50%;
     height:40px;
     border-radius:5px;
-    margin-bottom:20px;
+    border-color:#000000;
+    margin-top:10px;
+    margin-bottom:10px;
 `
 
 export const Button = styled.button`
     width:100px;
     height:40px;
     border-radius:3px;
-    background-color:${props => props.bgColor};
-    border: 1px solid ${props => props.borderColor}
+    border: 1px solid ${props => props.borderColor};
+    &:hover {
+        background-color:${props => props.borderColor};
+        cursor:pointer;
+        color:#fff;
+    }
 `
 
 export const DashBoardBar = styled.div`
     display:flex;
     width:20%;
     flex-direction:column;
-    border:1px solid red;
 `
 
 export const DashBoardItem = styled.div`
@@ -34,14 +39,14 @@ export const DashBoardItem = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#ff0000;
+    color:grey;
     height:50px;
-    border:1px solid #ff0000;
+    border:1px solid grey;
     margin-bottom:5px;
     cursor:pointer;
     &:hover {
-        color:#ffffff;
-        background-color:#ff0000;
+        color:#fff;
+        background-color:grey;
     }
 `
 
